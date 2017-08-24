@@ -3,18 +3,19 @@ package cs230individualproject;
 import java.util.Iterator;
 
 //LinkedStack Manual Implementation:
-public class LinkedStack<Item> implements Stack<Item>, LinkedList<Item> {
+public class LinkedStack<Item> implements Stack<Item>, SinglyLinkedList<Item> {
 
     private Node head; //the first node
     private int size; // number of items
 
+    //Warning, insertAfter has not been tested
     @Override
     public void insertAfter(Item item) {
         Node oldHead = head;
         Node oldHeadNext = null;
         head = new Node();
-        if(oldHead.next!=null){
-                oldHeadNext = oldHead.next;
+        if (oldHead.next != null) {
+            oldHeadNext = oldHead.next;
         }
         oldHead.next = head;
         head.item = item;
@@ -23,22 +24,24 @@ public class LinkedStack<Item> implements Stack<Item>, LinkedList<Item> {
         size++;
     }
 
+    //Warning, deleteNext has not been tested
     @Override
     public void deleteNext() {
-        if(head.next!=null)
-        {
-            head.next=head.next.next;
+        if (head.next != null) {
+            head.next = head.next.next;
         }
     }
 
+    //Checks if the head has a next node
     @Override
     public boolean hasNext() {
-        return head.next!=null;
+        return head.next != null;
     }
+
+    //Return the current item orf the node and traverse to the next node
     @Override
     public Item next() {
-        if(hasNext())
-        {
+        if (hasNext()) {
             head = head.next;
             return head.item;
         }
@@ -95,7 +98,7 @@ public class LinkedStack<Item> implements Stack<Item>, LinkedList<Item> {
         return new LinkedStackIterator();
     }
 
-    //inner class to implement iterator interface
+    //Inner class to implement iterator interface
     private class LinkedStackIterator implements Iterator<Item> {
 
         private int i = size;
