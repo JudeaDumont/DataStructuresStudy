@@ -10,5 +10,7 @@ public class CS230IndividualProject {
         Contributor poppedContributor = contributorLinkedStack.contributors.pop();
         System.out.println("\n\n" + poppedContributor.toString() + "\n\n");
         contributorLinkedStack.displayContributors();
+        IDLookUpTable idLookUpTable = new IDLookUpTable(contributorLinkedStack.contributors);
+        System.out.print(idLookUpTable.toString());
     }
 }

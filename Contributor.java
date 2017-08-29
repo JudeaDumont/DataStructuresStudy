@@ -25,4 +25,54 @@ public class Contributor {
     public String toString() {
         return name + "\t" + city + "\t" + country + "\t" + phone + "\t" + contribution + "\t" + id + "\t";
     }
+
+    //Getters
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public double getContribution() {
+        return contribution;
+    }
+
+    //Setters
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setContribution(double contribution) {
+        this.contribution = contribution;
+    }
 }
