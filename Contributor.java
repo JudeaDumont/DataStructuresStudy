@@ -23,7 +23,8 @@ public class Contributor {
     //Override the toString method to make displaying a contributors information easier
     @Override
     public String toString() {
-        return name + "\t" + city + "\t" + country + "\t" + phone + "\t" + contribution + "\t" + id + "\t";
+        return "Name: " + name + "\t" + "City: " + city + "\t" + "Country: "+ country + "\t" + "Phone: "+ phone + "\t" + "Contribution: "+ 
+                contribution + "\t" + "ID: "+ id + "\t";
     }
 
     //Getters

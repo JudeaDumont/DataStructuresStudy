@@ -9,7 +9,7 @@ import java.util.Iterator;
 public class ContributorsFromCSV {
 
     //The linkedstack the marshaled plain text objects will contain
-    LinkedStack<Contributor> contributors = new LinkedStack<Contributor>();
+    ContributorLinkedStack contributors = new ContributorLinkedStack();
 
     //Constructor Intermediary to Begin Marshalling
     public ContributorsFromCSV(String pathToContributorsCSV) {
