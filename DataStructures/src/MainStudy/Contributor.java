@@ -1,7 +1,7 @@
-package cs230individualproject;
+package MainStudy;
 
 //Contributor Class represents a contribuotr to funding a zoo
-public class Contributor {
+public class Contributor implements Comparable {
 
     private int id;
     private String name;
@@ -23,8 +23,8 @@ public class Contributor {
     //Override the toString method to make displaying a contributors information easier
     @Override
     public String toString() {
-        return "Name: " + name + "\t" + "City: " + city + "\t" + "Country: "+ country + "\t" + "Phone: "+ phone + "\t" + "Contribution: "+ 
-                contribution + "\t" + "ID: "+ id + "\t";
+        return "Name: " + name + "\t" + "City: " + city + "\t" + "Country: " + country + "\t" + "Phone: " + phone + "\t" + "Contribution: "
+                + contribution + "\t" + "ID: " + id + "\t";
     }
 
     //Getters
@@ -75,5 +75,17 @@ public class Contributor {
 
     public void setContribution(double contribution) {
         this.contribution = contribution;
+    }
+
+    //Overriding for the point of conforming to the generic implementation for
+    //the rest of the datastructures and overarching data structures therein. 
+    @Override
+    public int compareTo(Object someContributor) {
+        return this.name.compareTo(((Contributor) someContributor).name);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return (this.getId() == ((Contributor) o).getId());
     }
 }

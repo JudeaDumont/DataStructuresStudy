@@ -1,4 +1,4 @@
-package cs230individualproject;
+package MainStudy;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -9,21 +9,23 @@ import java.util.Iterator;
 public class ContributorsFromCSV {
 
     //The linkedstack the marshaled plain text objects will contain
-    ContributorLinkedStack contributors = new ContributorLinkedStack();
+    SortLinkedStack contributors = new SortLinkedStack();
 
     //Constructor Intermediary to Begin Marshalling
     public ContributorsFromCSV(String pathToContributorsCSV) {
         getContributors(pathToContributorsCSV);
     }
 
-    //The method that parses the plain text and creates the contributor objects
+    //The method that parses the plain text,
+    //creates the contributor objects
+    //and inserts them in to the datastructure with an insertion sort method
     private void getContributors(String pathToContributorsCSV) {
         try {
             BufferedReader br = new BufferedReader(new FileReader(pathToContributorsCSV));
             String line;
             while ((line = br.readLine()) != null) {
                 String[] contributorData = line.split(",");
-                contributors.push(
+                contributors.sortInsert(
                         new Contributor(
                                 contributorData[0],
                                 contributorData[1],
