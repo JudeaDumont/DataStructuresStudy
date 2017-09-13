@@ -1,4 +1,4 @@
-package MainStudy;
+package cs230individualproject;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -6,6 +6,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * @param <ValueType>
+ */
 // Class StackChainedHashTable 
 public class StackChainedHashTable {
 
@@ -46,7 +49,8 @@ public class StackChainedHashTable {
             boolean itemFound = false;
             while (entryIterator.hasNext() && !itemFound) {
                 value = entryIterator.next();
-                itemFound = (value.equals((Integer.parseInt(key))));
+                Contributor searchContributor = new Contributor(null, null, null, null, 0, (Integer.parseInt(key)));
+                itemFound = (value.equals(searchContributor));
             }
             if (!itemFound) {
                 return null;
@@ -65,7 +69,8 @@ public class StackChainedHashTable {
             table[hash].push(value);
             size++;
         } else {
-            //Handle Collision
+            //Handle Collision with Hash Collision Object That is a Pointer to
+            //A contributor in the linked list
             table[hash].push(value);
         }
     }

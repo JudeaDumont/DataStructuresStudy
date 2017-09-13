@@ -1,4 +1,4 @@
-package MainStudy;
+package cs230individualproject;
 
 //Stack interface defines the methods that are available to a stack data structure
 public interface Stack<Item> {

@@ -1,4 +1,4 @@
-package MainStudy;
+package cs230individualproject;
 
 //Contributor Class represents a contribuotr to funding a zoo
 public class Contributor implements Comparable {
@@ -81,7 +81,7 @@ public class Contributor implements Comparable {
     //the rest of the datastructures and overarching data structures therein. 
     @Override
     public int compareTo(Object someContributor) {
-        return this.name.compareTo(((Contributor) someContributor).name);
+        return this.name.trim().compareTo(((Contributor) someContributor).name.trim());
     }
 
     @Override

@@ -1,4 +1,4 @@
-package MainStudy;
+package cs230individualproject;
 
 //LinkedList Interface defines operations that a singly linked list can perform
 public interface SinglyLinkedList<Item> extends Iterable<Item> {

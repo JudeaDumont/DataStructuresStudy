@@ -1,4 +1,4 @@
-package MainStudy;
+package cs230individualproject;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -18,7 +18,7 @@ public class ContributorsFromCSV {
 
     //The method that parses the plain text,
     //creates the contributor objects
-    //and inserts them in to the datastructure with an insertion sort method
+    //and inserts them intot the datastrucure witha n insertion sort method
     private void getContributors(String pathToContributorsCSV) {
         try {
             BufferedReader br = new BufferedReader(new FileReader(pathToContributorsCSV));

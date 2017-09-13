@@ -1,4 +1,4 @@
-package MainStudy;
+package cs230individualproject;
 /*
  * @param <ValueType>
  */

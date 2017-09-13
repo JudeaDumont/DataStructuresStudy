@@ -1,4 +1,4 @@
-package MainStudy;
+package cs230individualproject;
 
 import java.util.Iterator;
 
@@ -142,7 +142,7 @@ public class SortLinkedStack<ValueType extends Comparable> implements Stack<Valu
             head.value = value;
             current = head;
         } else {
-            Node previousNode = null;
+            Node previousNode = currentNode;
             while (currentNode.next != null) {
                 previousNode = currentNode;
                 currentNode = currentNode.next;
@@ -163,6 +163,21 @@ public class SortLinkedStack<ValueType extends Comparable> implements Stack<Valu
     @Override
     public Iterator iterator() {
         return new LinkedStackIterator();
+    }
+
+    @Override
+    public ValueType sequentialSearch(ValueType value) {
+        Node currentNode = head;
+        ValueType returnedNode = null;
+        while(currentNode.next!=null && currentNode.value.compareTo(value)!=0)
+        {
+            currentNode = currentNode.next;
+        }
+        if(currentNode.value.compareTo(value)==0)
+        {
+            returnedNode = (ValueType)currentNode.value;
+        }
+        return returnedNode;
     }
 
     //Inner class to implement iterator interface
